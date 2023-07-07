@@ -1,0 +1,8 @@
+@Bean // <bean id , class , scope ...../>
+	public ModelMapper myModelMapper() {
+		ModelMapper mapper = new ModelMapper();
+		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+		// set property matching convention between DTO n entity : as strict
+		return mapper; // config class method rets --> model mapper instance to SC --it will be managed
+						// as spring bean by SC
+	}
